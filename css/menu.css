@@ -26,9 +26,8 @@
   background-color: var(--background);
   border-right: solid 2px var(--text);
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  display: grid;
+  grid-template-rows: 1fr auto;
   transition: 500ms ease-in-out;
   transform: translateX(calc(-100% - 2px));
   animation: 0ms 500ms spawn forwards;
@@ -79,4 +78,9 @@ height: 100%;
 width: 0;
 } .menu[open="true"] .clicker {
   width: 100vw;
+}
+
+.menu a {
+  color: var(--text);
+  text-decoration: none;
 }

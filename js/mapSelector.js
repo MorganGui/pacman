@@ -1,5 +1,5 @@
 import maps from '../asset/data/Maps.js'
-import { changeMap } from './pacman.js'
+import { changeMap } from '../views/home/script.js'
 
 const refs = {
   menu: document.querySelector('[data-map-selector]')

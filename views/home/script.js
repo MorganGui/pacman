@@ -1,9 +1,9 @@
-import Map from '../classes/Map.js'
-import Player from '../classes/Player.js'
-import Ghost from '../classes/Ghost.js'
+import Map from '../../classes/Map.js'
+import Player from '../../classes/Player.js'
+import Ghost from '../../classes/Ghost.js'
 
-import settings from '../asset/data/Settings.js'
-import maps from '../asset/data/Maps.js'
+import settings from '../../asset/data/Settings.js'
+import maps from '../../asset/data/Maps.js'
 
 // data
 const refs = {

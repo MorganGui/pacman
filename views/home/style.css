@@ -3,6 +3,13 @@ main {
   --part-size: 30px; /* /!\ value in JS */
 }
 
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
 .map {
   display: grid;
   border-radius: 1em;
@@ -43,7 +50,7 @@ main {
 }
 
 
-main > div {
+.game-container > div {
   position: relative;
 }
 .entities {
@@ -87,10 +94,7 @@ main > div {
   }
 }
 
-dialog.end-game {
-  opacity: 0;
-  animation: forwards 1s fade-in; /* */
-} dialog.end-game > div {
+dialog.end-game > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,10 +108,25 @@ dialog.end-game {
   color: var(--text);
 }
 
-@keyframes fade-in {
-from {
-  opacity: 0;
-} to {
-  opacity: 1;
+
+.score {
+  position: fixed;
+  top: 1em;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+.restart {
+  padding: .25em 1.5em;
+  background-color: var(--background-t);
+  color: var(--text);
+  border: solid 1px var(--text);
+  border-radius: .5em;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 250ms;
+} .restart:hover {
+  letter-spacing: .2em;
+  background-color: var(--background-t-light);
 }

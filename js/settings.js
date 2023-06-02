@@ -1,5 +1,5 @@
 import settings from '../asset/data/Settings.js'
-import { changeSpeed } from './pacman.js'
+import { changeSpeed } from '../views/home/script.js'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   refs.modal.addEventListener('click', e => {
     unselect()
-    console.log(e)
   })
   // controls
   refs.controls.up.addEventListener('click', () => {

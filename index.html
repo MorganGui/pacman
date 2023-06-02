@@ -15,25 +15,18 @@
     <link rel="apple-touch-icon" href="./asset/img/icon.png"><!--IOS-->
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" data-css>
   </head>
   <body>
     <header>
-      <div class="left">
-        <button data-map-selector-button open="false" class="hamburger">
-          <svg viewbox="0 0 100 100">
-            <path d="M 20 30 H 80"></path>
-            <path d="M 20 50 H 80"></path>
-            <path d="M 20 70 H 80"></path>
-          </svg>
-        </button>
-        <div data-map-selector open="false" class="menu">
-          <div class="clicker"></div>
-          <ul></ul>
-        </div>
-      </div>
-      <div class="center">
-        <div data-score>Score : 0 / 0</div>
-      </div>
+      <button data-map-selector-button open="false" class="hamburger">
+        <svg viewbox="0 0 100 100">
+          <path d="M 20 30 H 80"></path>
+          <path d="M 20 50 H 80"></path>
+          <path d="M 20 70 H 80"></path>
+        </svg>
+      </button>
+
       <div class="right">
         <input type="checkbox" id="cbo-theme">
         <label for="cbo-theme">
@@ -43,78 +36,72 @@
         <div>
           <i class="fa-solid fa-gear fa-lg" data-settings-open></i>
         </div>
-        <dialog class="settings" data-settings-modal>
-          <div class="row">
-            <div class="col">
-              Controls
-              <button class="item" data-settings-up>
-                <i class="fa-solid fa-chevron-up"></i>
-                <p></p>
-              </button>
-              <button class="item" data-settings-down>
-                <i class="fa-solid fa-chevron-down"></i>
-                <p></p>
-              </button>
-              <button class="item" data-settings-right>
-                <i class="fa-solid fa-chevron-right"></i>
-                <p></p>
-              </button>
-              <button class="item" data-settings-left>
-                <i class="fa-solid fa-chevron-left"></i>
-                <p></p>
-              </button>
-            </div>
-            <div class="col">
-              Difficulty
-              <button data-settings-easy class="item">
-                <i class="fa-solid fa-angles-right"></i>
-                <p>Easy</p>
-              </button>
-              <button data-settings-normal class="item selected">
-                <i class="fa-solid fa-angles-right"></i>
-                <p>Normal</p>
-              </button>
-              <button data-settings-hard class="item">
-                <i class="fa-solid fa-angles-right"></i>
-                <p>Hardcore</p>
-              </button>
-              <button data-settings-extreme class="item">
-                <i class="fa-solid fa-angles-right"></i>
-                <p>Extreme</p>
-              </button>
-            </div>
-            <i class="fa-solid fa-xmark close-button" data-settings-close></i>
-          </div>
-        </dialog>
       </div>
+      
+      <nav data-map-selector open="false" class="menu">
+        <div class="clicker"></div>
+        <ul></ul>
+        <ul>
+          <li class="title" href="">
+            <a href="/maker" onclick="route()">Maker</a>
+          </li>
+        </ul>
+      </nav>
+
+      <dialog class="settings" data-settings-modal>
+        <div class="row">
+          <div class="col">
+            Controls
+            <button class="item" data-settings-up>
+              <i class="fa-solid fa-chevron-up"></i>
+              <p></p>
+            </button>
+            <button class="item" data-settings-down>
+              <i class="fa-solid fa-chevron-down"></i>
+              <p></p>
+            </button>
+            <button class="item" data-settings-right>
+              <i class="fa-solid fa-chevron-right"></i>
+              <p></p>
+            </button>
+            <button class="item" data-settings-left>
+              <i class="fa-solid fa-chevron-left"></i>
+              <p></p>
+            </button>
+          </div>
+          <div class="col">
+            Difficulty
+            <button data-settings-easy class="item">
+              <i class="fa-solid fa-angles-right"></i>
+              <p>Easy</p>
+            </button>
+            <button data-settings-normal class="item selected">
+              <i class="fa-solid fa-angles-right"></i>
+              <p>Normal</p>
+            </button>
+            <button data-settings-hard class="item">
+              <i class="fa-solid fa-angles-right"></i>
+              <p>Hardcore</p>
+            </button>
+            <button data-settings-extreme class="item">
+              <i class="fa-solid fa-angles-right"></i>
+              <p>Extreme</p>
+            </button>
+          </div>
+          <i class="fa-solid fa-xmark close-button" data-settings-close></i>
+        </div>
+      </dialog>
     </header>
 
-    <main>
-      <div>
-        <div data-map class="map"></div>
-        <div data-entities class="entities"></div>
-      </div>
-    </main>
+    <main data-app></main>
 
     <footer>
-      <div class="left"></div>
-      <div class="center">
-        <button data-game-restart class="button">restart</button>
-      </div>
-      <div class="right">
-        Copyright ©2023 Morgan Guillemin
-      </div>
+      Copyright ©2023 Morgan Guillemin
     </footer>
 
-    <dialog data-modal class="end-game">
-      <div>
-        <div data-modal-message></div>
-        <button data-modal-close class="button">restart</button>
-      </div>
-    </dialog>
-
+    <script data-js type="module"></script>
+    <script src="./js/router.js"></script>
     <script src="./js/theme.js"></script>
-    <script type="module" src="./js/pacman.js"></script>
     <script type="module" src="./js/settings.js"></script>
     <script type="module" src="./js/mapSelector.js"></script>
     <script src="https://kit.fontawesome.com/e83fe140a7.js" crossorigin="anonymous"></script>

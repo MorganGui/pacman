@@ -30,7 +30,7 @@ export default class Ghost extends Entity {
       down: this.checkIfCanMove(this.x, this.y+1),
       left: this.checkIfCanMove(this.x-1, this.y)
     }
-    
+
     if (this.direction) {
       if (this.direction === 'up' && (directions.right || directions.down || directions.left)) {
         delete directions.down
