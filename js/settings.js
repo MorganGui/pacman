@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   refs.modal.addEventListener('click', e => {
     unselect()
-    if (e.target.nodeName === 'DIALOG') e.target.close()
   })
   // controls
   refs.controls.up.addEventListener('click', () => {
