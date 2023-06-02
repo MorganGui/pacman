@@ -87,10 +87,7 @@ main > div {
   }
 }
 
-dialog.end-game {
-  opacity: 0;
-  animation: forwards 1s fade-in; /* */
-} dialog.end-game > div {
+dialog.end-game > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,12 +99,4 @@ dialog.end-game {
   border-radius: 1em;
   background-color: var(--background);
   color: var(--text);
-}
-
-@keyframes fade-in {
-from {
-  opacity: 0;
-} to {
-  opacity: 1;
-}
 }
