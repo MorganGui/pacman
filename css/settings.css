@@ -1,0 +1,54 @@
+.settings .row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 2em;
+
+  background-color: var(--background);
+  border: solid 1px var(--text);
+  border-radius: 1em;
+  color: var(--text);
+}
+.settings .col {
+  display: grid;
+  gap: 15px;
+}
+
+.settings .item {
+  outline: none;
+  background: none;
+  color: var(--text);
+  border: solid 1px var(--text);
+  border-radius: .5em;
+  cursor: pointer;
+  
+  display: grid;
+  align-items: center;
+  place-content: center;
+  grid-template-columns: 20px 1fr;
+  gap: .75em;
+
+  min-width: 10em;
+  padding: 1em 1.25em;
+}
+
+.settings .item.selected {
+  border: solid 1px var(--pacman);
+  outline: solid 2px var(--pacman);
+}
+
+.settings .item i {
+  pointer-events: none;
+}
+
+.settings .item p {
+  text-align: left;
+}
+
+.close-button {
+  position: absolute;
+  top: .75em;
+  right: .75em;
+}

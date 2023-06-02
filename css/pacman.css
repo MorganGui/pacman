@@ -1,0 +1,113 @@
+main {
+  --entity--size: 25px;
+  --part-size: 30px; /* /!\ value in JS */
+}
+
+.map {
+  display: grid;
+  border-radius: 1em;
+}
+
+.map div {
+  width: var(--part-size);
+  height: var(--part-size);
+  border: solid 0px transparent;
+  background-color: var(--background-t);
+  opacity: 0;
+}
+
+/* #region walls */
+.map > .top {
+  border-top: solid 1px var(--wall);
+} .map > .right {
+  border-right: solid 1px var(--wall);
+} .map > .bottom {
+  border-bottom: solid 1px var(--wall);
+} .map > .left {
+  border-left: solid 1px var(--wall);
+}
+/* #endregion */
+
+.map .point {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} .map .point::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: solid 1px var(--point);
+}
+
+
+main > div {
+  position: relative;
+}
+.entities {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.entities svg {
+  position: absolute;
+  width: var(--entity--size);
+  height: var(--entity--size);
+  margin: calc((var(--part-size) - var(--entity--size)) / 2);
+  transition: top var(--speed) linear, left var(--speed) linear;
+}
+.entities #pacman {
+  opacity: 0;
+  fill: transparent;
+  stroke: var(--pacman);
+  stroke-width: 50;
+  stroke-dasharray: 0 10 80 10;
+  animation: forwards 5s fade-in;
+}
+#pacman.is-moving {
+  animation: forwards 2.5s fade-in, infinite alternate .25s linear pacman;
+}
+
+@keyframes pacman {
+  0% {
+    stroke-dasharray: 0 10 80 10;
+  } 100% {
+    stroke-dasharray: 0 0 100 0;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
+
+dialog.end-game {
+  opacity: 0;
+  animation: forwards 1s fade-in; /* */
+} dialog.end-game > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  width: 15em;
+  height: 10em;
+  border: solid 2px var(--text);
+  border-radius: 1em;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+@keyframes fade-in {
+from {
+  opacity: 0;
+} to {
+  opacity: 1;
+}
+}

@@ -1,0 +1,82 @@
+.hamburger {
+  width: 4em;
+  height: 4em;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  stroke: var(--text);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 60;
+  transition: 100ms;
+} .hamburger:hover {
+  scale: 1.1;
+  stroke-width: 7px;
+}
+
+.menu {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../asset/img/cartographer.webp');
+  background-color: var(--background);
+  border-right: solid 2px var(--text);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  transition: 500ms ease-in-out;
+  transform: translateX(calc(-100% - 2px));
+  animation: 0ms 500ms spawn forwards;
+} .menu[open="true"] {
+  transform: translateX(0);
+}
+
+.menu ul {
+  height: 100%;
+  background-color: var(--background-t);
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5em;
+}
+
+.menu li {
+  list-style: none;
+  position: relative;
+}
+.menu li:not(.selected) {
+  --color: var(--text);
+  cursor: pointer;
+} .menu li:not(.selected)::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color);
+  transition: 250ms;
+} .menu li:not(.selected):hover::before {
+  width: 100%;
+}
+.menu li.selected {
+  --color: var(--pacman);
+  color: var(--color);
+  cursor: default;
+}
+
+.menu .clicker {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 0;
+} .menu[open="true"] .clicker {
+  width: 100vw;
+}
